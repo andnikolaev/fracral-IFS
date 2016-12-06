@@ -1,37 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Fractal - js</title>
+    <meta charset="utf-8">
+</head>
 <body>
- 
-<canvas id="sierpinskiCanvas" width="600" height="470" style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML5 canvas tag.</canvas>
- 
-<script>
-function sierpinski(Ax,Ay,Bx,By,Cx,Cy,d,ctx) {
-    if(d>0) {    
-        sierpinski(Ax,Ay,(Ax + Cx) / 2,(Ay + Cy) / 2,(Ax + Bx) / 2,(Ay + By) / 2,d-1,ctx);
-        sierpinski((Ax + Bx) / 2,(Ay + By) / 2,(Bx + Cx) / 2,(By + Cy) / 2,Bx,By,d-1,ctx);
-        sierpinski((Ax + Cx) / 2,(Ay + Cy) / 2,(Bx + Cx) / 2,(By + Cy) / 2,Cx,Cy,d-1,ctx);
-    }
-    else {
-        ctx.moveTo(Ax,Ay);
-        ctx.lineTo(Bx,By);
-        ctx.lineTo(Cx,Cy);
-        ctx.lineTo(Ax,Ay);
-    }
-}
-     
-var ctx=document.getElementById("sierpinskiCanvas").getContext("2d");
-var x = 300;
-var y = 430;
-var a = 400;
-var h = (1.732050807/2)*a;
-sierpinski(x-a/2,y,x+a/2,y,x,y-a,4,ctx);
-ctx.fillStyle = '#00FF00';
-ctx.fill();
-ctx.strokeStyle = 'black';
-ctx.lineWidth = 2;
-ctx.stroke();
-</script>
- 
+
+Длина стороны <input id="sideLength" type="text" value="400"><br>
+Глубина <input id="deep" type="text" value="4"><br>
+<input id="btnDraw" type="button" value="Draw" onclick="drawTriangle()"><br>
+
+<canvas id="paint" style="border:1px solid; visibility: hidden"></canvas>
+
+<script src="script.js"></script>
 </body>
 </html>

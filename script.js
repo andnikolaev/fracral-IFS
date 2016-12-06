@@ -28,10 +28,10 @@ var drawTriangle = function () {
     var y = h+30;
     var d = Number(document.getElementById("deep").value);
     sierpinski(x - a / 2, y, x + a / 2, y, x, y - h, d, ctx);
-    ctx.fillStyle = '#00FF00';
+    ctx.fillStyle = 'black';
     ctx.fill();
     ctx.strokeStyle = 'black';
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 0.1;
     ctx.stroke();
 };
 

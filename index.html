@@ -7,7 +7,7 @@
 <body>
 
 Длина стороны <input id="sideLength" type="text" value="400"><br>
-Глубина <input id="deep" type="text" value="4"><br>
+Глубина <input id="deep" style="width: 30px" type="number" min=1 max = 10 value="4" onclick="drawTriangle()"><br>
 <input id="btnDraw" type="button" value="Draw" onclick="drawTriangle()"><br>
 
 <canvas id="paint" style="border:1px solid; visibility: hidden"></canvas>
